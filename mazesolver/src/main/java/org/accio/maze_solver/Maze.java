@@ -17,7 +17,7 @@ public class Maze extends JFrame {
             {1,0,0,0,1,1,1,0,0,0,0,0,1},
             {1,0,1,0,0,0,0,0,1,1,1,0,1},
             {1,0,1,0,1,1,1,0,1,0,0,0,1},
-            {1,0,1,0,1,0,0,0,1,1,1,0,1},
+            {1,0,1,0,1,1,0,0,1,1,1,0,1},
             {1,0,1,0,1,1,1,0,1,0,1,0,1},
             {1,0,0,0,0,0,0,0,0,0,1,9,1},
             {1,1,1,1,1,1,1,1,1,1,1,1,1}
@@ -30,6 +30,8 @@ public class Maze extends JFrame {
         setTitle("Maze Solver");
         setSize(640,720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ImageIcon img = new ImageIcon("src/logo.jpg");
+        setIconImage(img.getImage());
         MazeDfs solver = new MazeDfs();
         solver.searchPath(maze , 1, 1 , path);
     }
@@ -37,7 +39,7 @@ public class Maze extends JFrame {
     @Override
     public void paint(Graphics g)
     {
-        g.translate(50,50);//coordinate to locate the graphics
+        g.translate(100,100);//coordinate to locate the graphics
 
         for(int i=0; i< maze.length ; i++) {
             for (int j = 0; j < maze[0].length; j++) {
@@ -69,7 +71,7 @@ public class Maze extends JFrame {
             {
                 int pathx = path.get(i);
                 int pathy = path.get(i+1);
-                g.setColor(Color.RED);
+                g.setColor(Color.YELLOW);
                 g.fillRect(30*pathx , 30*pathy , 20 , 20);
             }
             else {
