@@ -18,7 +18,6 @@ public class AppFrame extends JFrame implements ActionListener {
 
     public AppFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         this.setLayout(null);
 
         label=new JLabel();
@@ -58,6 +57,7 @@ public class AppFrame extends JFrame implements ActionListener {
                 System.out.print(file);
                 try{
                     Compressor.method(file);
+                    //JOptionPane.showMessageDialog(null,"Your file is compressed","Greeting",JOptionPane.PLAIN_MESSAGE);
                 }
                 catch (Exception ex)
                 {
