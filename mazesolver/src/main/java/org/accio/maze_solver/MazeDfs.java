@@ -4,6 +4,7 @@ import java.util.List;
 
 public class MazeDfs {
     public boolean searchPath(int[][] maze, int x, int y, List<Integer> path) {
+        /*we are taking y x because in grid coordination x as horizontal and y as vertical*/
         if(maze[y][x]==9){
             path.add(x);
             path.add(y);

@@ -34,12 +34,14 @@ public class Maze extends JFrame {
         setIconImage(img.getImage());
         MazeDfs solver = new MazeDfs();
         solver.searchPath(maze , 1, 1 , path);
+
+
     }
     //overriden method from jframe to desighn graphics
     @Override
     public void paint(Graphics g)
     {
-        g.translate(100,100);//coordinate to locate the graphics
+        g.translate(100,200);//coordinate to locate the graphics
 
         for(int i=0; i< maze.length ; i++) {
             for (int j = 0; j < maze[0].length; j++) {
