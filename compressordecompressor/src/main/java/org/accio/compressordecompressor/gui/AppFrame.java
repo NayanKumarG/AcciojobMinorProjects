@@ -22,20 +22,26 @@ public class AppFrame extends JFrame implements ActionListener {
 
         label=new JLabel();
         label.setText("Compressor & Decompressor");
-        JPanel panel = new JPanel();
-        panel.add(label);
-        panel.setBackground(Color.gray);
-        panel.setBounds(20, 20, 460, 20); // set the position and size of the panel
-        this.add(panel); // add the panel to the window
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setForeground(new Color(0,20,230));
+        label.setBounds(120, 80, 460, 20);
+        label.setFont(new Font("MV Boli",Font.PLAIN,20));
+        this.add(label);
+//        JPanel panel = new JPanel();
+//        panel.add(label);
+//        panel.setBackground(Color.gray);
+//        panel.setBounds(20, 20, 360, 20); // set the position and size of the panel
+//        this.add(panel); // add the panel to the window
 
         compressButton = new JButton("Select file to compress");//initialising buttons with title passed
-        compressButton.setBounds(20, 120, 200, 30);
+        compressButton.setBounds(20, 170, 200, 30);
         compressButton.addActionListener(this);
 
         decompressButton = new JButton("Select file to decompress");
-        decompressButton.setBounds(260, 120, 200, 30);
+        decompressButton.setBounds(260, 170, 200, 30);
         decompressButton.addActionListener(this);
 
+        this.setTitle("CompressorDecompressor");
         this.add(compressButton); //adding the button to the Jframe
         this.add(decompressButton);
         this.setSize(500,400);
